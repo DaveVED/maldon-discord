@@ -12,7 +12,7 @@
 </div>
 
 ## ⇁ Table of Contents
-* [Getting Started][#-Getting-Started)
+* [Getting Started](#-Getting-Started)
 * [Contribution](#-Contribution)
 
 ## ⇁ Getting Started
