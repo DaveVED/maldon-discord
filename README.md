@@ -2,7 +2,7 @@
 
 # Maldon Discord Bot
 
-##### Versatile tool to drive enhance server and user experience
+##### Versatile tool to enhance the discrod experience
 
 [![GO](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)](https://www.go.dev)
 [![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://www.mongodb.com/)
