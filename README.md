@@ -15,6 +15,8 @@
 * [Getting Started](#-Getting-Started)
 * [Commands](#-Commands)
 * [Concepts](#-Concepts)
+    * [Adding in a Command](#-Adding-in-a-Command)
+    * [Hosting your own instance](#-Hosting-your-own-instance)
 * [Contribution](#-Contribution)
 
 ## ⇁ Getting Started
