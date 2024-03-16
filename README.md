@@ -24,23 +24,8 @@ means we're not just allowing access to the source code but are actively
 inviting contributions from the community. If you're interested in 
 contributing, here's how to get started:
 
-1. ***Start with an Issue*** with an Issue: Before making any changes, please open an issue to 
-discuss your proposed contribution. This helps us coordinate efforts 
-and ensure that your work aligns with the project's goals and current priorities.
-Pull Requests (PRs): Once there's agreement on the issue you're addressing, feel free to submit a pull request. We're open to PRs, but please note that we adopt a conservative approach to merging them. Our focus is on maintaining the project's generality and utility. We aim for contributions that enhance the project for everyone, rather than addressing highly specific use cases.
-
-1. ***Pull Requests (PRs)***: nce there's agreement on the issue you're 
-addressing, feel free to submit a pull request. We're open to PRs, but 
-please note that we adopt a conservative approach to merging them. 
-Our focus is on maintaining the project's generality and utility. 
-We aim for contributions that enhance the project for everyone, 
-rather than addressing highly specific use cases.
-
-1. ***Fork vs. Clone***: If you have a particular use case that requires 
-modifications not generally applicable to the community, 
-we recommend forking the repository. This allows you to tailor the project 
-to your specific needs without diverging from the project's core focus. 
-For general contributions, cloning the repository and creating a branch 
-for your work is the way to go. This approach is better suited for 
-contributions intended for the broader user base.
-
+1. Before making any changes, please open an issue to discuss your proposed contribution.
+1. Create your branch `git checkout -b feature/fooBar`
+1. Commit your changes `git commit -am 'feat: some message'`
+1. Push to the branch `git push origin feature/fooBar`
+1. Create a new Pull Request
