@@ -47,7 +47,7 @@ todo
 If you have made custom modifications to the bot, you can build your own image and host it on your own server.
 
 ```bash
-todo
+docker build -t maldon-discord:latest -f build/Dockerfile .
 ```
 
 ## ⇁ Contribution
