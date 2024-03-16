@@ -16,4 +16,8 @@ func MessageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
     if m.Content == "!ping" {
         PingMessageCreate(s, m)
     }
+
+    if m.Content == "!whoami" {
+        WhoamiMessageCreate(s, m)
+    }
 }
