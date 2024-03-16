@@ -23,13 +23,13 @@
 The following commands are available to use:
 
 | Command | Inputs  | Description |
-| ------- | -----   | ----------- |
+| :------- | :-----   | :----------- |
 | `!ping` | `na`    | Sends `pong` to the channel that recieved the message. This is simple health check. |
 
 We also have a few passive commands implmented:
 
 | type | Description |
-| ---- | ----------- |
+| :---- | :----------- |
 | `WelcomeNewMember` | Sends a welcome message to a `welcome` channel when new members join. |
 
 ## ⇁ Contribution
