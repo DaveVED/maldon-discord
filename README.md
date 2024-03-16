@@ -25,6 +25,7 @@ The following commands are available to use:
 | Command | Inputs  | Description |
 | :------- | :-----   | :----------- |
 | `!ping` | `na`    | Sends `pong` to the channel that recieved the message. This is simple health check. |
+| `!whoami ` | `na` | Sends custom message to the server with user details |
 
 We also have a few passive commands implmented:
 
