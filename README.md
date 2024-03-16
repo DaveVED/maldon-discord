@@ -14,6 +14,7 @@
 ## ⇁ Table of Contents
 * [Getting Started](#-Getting-Started)
 * [Commands](#-Commands)
+* [Concepts](#-Concepts)
 * [Contribution](#-Contribution)
 
 ## ⇁ Getting Started
@@ -32,6 +33,22 @@ We also have a few passive commands implmented:
 | type | Description |
 | :---- | :----------- |
 | `WelcomeNewMember` | Sends a welcome message to a `welcome` channel when new members join. |
+
+## ⇁ Concepts
+
+### Hosting your own instance
+
+You can host you own instance if you want to use the bot in your own server. We store the image on `DockerHub` so you can get started with some easy steps.
+
+```bash
+todo
+```
+
+If you have made custom modifications to the bot, you can build your own image and host it on your own server.
+
+```bash
+todo
+```
 
 ## ⇁ Contribution
 
