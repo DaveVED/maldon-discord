@@ -5,7 +5,6 @@ import (
     "os"
     "os/signal"
     "syscall"
-    "fmt"
 
     "github.com/DaveVED/maldon-discord/internal/commands"
     "github.com/bwmarrin/discordgo"
@@ -28,6 +27,7 @@ func Start() {
     log.Println("Discord session created successfully.")
 
     dg.AddHandler(commands.MessageCreate)
+    dg.AddHandler(commands.WelcomeNewMember)
 
     dg.Identify.Intents = discordgo.IntentsGuildMessages
 
@@ -45,8 +45,3 @@ func Start() {
 
     dg.Close()
 }
-
-func messageSendHandler(s *discordgo.Session, m *discordgo.GuildMemberAdd) {
-    s.ChannelMessageSend("1218320382717595748", fmt.Sprintf("Welcome %s to the server!", m.Member.User.Username))
-}
-

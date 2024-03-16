@@ -6,9 +6,8 @@ import (
     "github.com/bwmarrin/discordgo"
 )
 
+// MessageCreate is called whenever a new message is created in a channel.
 func MessageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
-    log.Printf("Message received: '%s'", m.Content)
-
     if m.Author.ID == s.State.User.ID {
         log.Println("Ignoring bot's own message.")
         return 
@@ -18,4 +17,3 @@ func MessageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
         PingMessageCreate(s, m)
     }
 }
-
