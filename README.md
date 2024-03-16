@@ -14,8 +14,8 @@
 ## ⇁ Table of Contents
 * [Getting Started](#-Getting-Started)
 * [Commands](#-Commands)
-* [Concepts](#-Concepts)
     * [Adding in a Command](#-Adding-in-a-Command)
+* [Deployments](#-Deployments)
     * [Hosting your own instance](#-Hosting-your-own-instance)
 * [Contribution](#-Contribution)
 
@@ -35,8 +35,6 @@ We also have a few passive commands implmented:
 | type | Description |
 | :---- | :----------- |
 | `WelcomeNewMember` | Sends a welcome message to a `welcome` channel when new members join. |
-
-## ⇁ Concepts
 
 ### Adding in a Command
 
@@ -65,6 +63,8 @@ If the `handler.go` does not have support for what you are trying to do, you
 will also need to update the `/internal/maldon/maldon.go` file to add the new
 hanlder. For example, `dg.AddHandler(commands.XZY)` but you should only do this
 *if and only if* there is not already a hanlder you can reuse.
+
+## ⇁ Deployments
 
 ### Hosting your own instance
 
