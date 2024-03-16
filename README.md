@@ -36,6 +36,34 @@ We also have a few passive commands implmented:
 
 ## ⇁ Concepts
 
+### Adding in a Command
+
+Take our `internal/commands` directory structure as an example:
+
+```bash
+├── internal
+│   ├── commands
+│   │   ├── handler.go
+│   │   ├── pingpong.go
+│   │   ├── xyz.go
+```
+
+From this you'll notice that we have two key things going on we have 
+`handler.go` and then our command files. When adding a new command you can 
+leverage the same structure.
+
+- `handler.go` - This file is the main entry point for the bot. It's where we 
+  handle the incoming messages and then route them to the correct command.
+
+- command files - These are the files that contain the actual command logic. 
+  They are named after the command they are handling. For example, `pingpong.go` 
+  contains the logic for the `!ping` command.
+
+If the `handler.go` does not have support for what you are trying to do, you
+will also need to update the `/internal/maldon/maldon.go` file to add the new
+hanlder. For example, `dg.AddHandler(commands.XZY)` but you should only do this
+*if and only if* there is not already a hanlder you can reuse.
+
 ### Hosting your own instance
 
 You can host you own instance if you want to use the bot in your own server. We store the image on `DockerHub` so you can get started with some easy steps.
