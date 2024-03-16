@@ -1,19 +1,24 @@
 package commands
 
 import (
-    "log"
-    
-    "github.com/bwmarrin/discordgo"
+	"log"
+
+	"github.com/bwmarrin/discordgo"
 )
 
 // MessageCreate is called whenever a new message is created in a channel.
 func MessageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
-    if m.Author.ID == s.State.User.ID {
-        log.Println("Ignoring bot's own message.")
-        return 
-    }
+	// Ignore messages sent by the bot itself
+	if m.Author.ID == s.State.User.ID {
+		return
+	}
 
-    if m.Content == "!ping" {
-        PingMessageCreate(s, m)
-    }
+	switch m.Content {
+	case "!ping":
+		PingMessageCreate(s, m)
+	case "!whoami":
+		WhoamiMessageCreate(s, m)
+	default:
+		log.Println("Command not recognized:", m.Content)
+	}
 }

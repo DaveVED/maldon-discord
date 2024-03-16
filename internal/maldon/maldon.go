@@ -1,47 +1,43 @@
 package maldon
 
 import (
-    "log"
-    "os"
-    "os/signal"
-    "syscall"
+	"log"
+	"os"
+	"os/signal"
+	"syscall"
 
-    "github.com/DaveVED/maldon-discord/internal/commands"
-    "github.com/bwmarrin/discordgo"
+	"github.com/DaveVED/maldon-discord/internal/commands"
+	"github.com/bwmarrin/discordgo"
 )
 
 func Start() {
-    // Log to indicate function start
-    log.Println("Starting the bot...")
+	log.Println("Starting the bot...")
 
-    token := os.Getenv("MALDON_DISCORD_BOT_TOKEN")
+	token := os.Getenv("MALDON_DISCORD_BOT_TOKEN")
 
-    // Log the token fetching
-    log.Printf("Using token: %s\n", token)
+	dg, err := discordgo.New("Bot " + token)
+	if err != nil {
+		log.Fatalf("Error creating Discord session: %v", err)
+	}
 
-    dg, err := discordgo.New("Bot " + token)
-    if err != nil {
-        log.Fatalf("Error creating Discord session: %v", err)
-    }
+	log.Println("Discord session created successfully.")
 
-    log.Println("Discord session created successfully.")
+	dg.AddHandler(commands.MessageCreate)
+	dg.AddHandler(commands.WelcomeNewMember)
 
-    dg.AddHandler(commands.MessageCreate)
-    dg.AddHandler(commands.WelcomeNewMember)
+	dg.Identify.Intents = discordgo.IntentsGuildMessages
 
-    dg.Identify.Intents = discordgo.IntentsGuildMessages
+	log.Println("Handlers added.")
 
-    log.Println("Handler added.")
+	if err = dg.Open(); err != nil {
+		log.Fatalf("Error opening connection: %v", err)
+	}
 
-    if err = dg.Open(); err != nil {
-        log.Fatalf("Error opening connection: %v", err)
-    }
+	log.Println("Bot is now running. Press CTRL+C to exit.")
 
-    log.Println("Bot is now running. Press CTRL+C to exit.")
+	sc := make(chan os.Signal, 1)
+	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, os.Interrupt, os.Kill)
+	<-sc
 
-    sc := make(chan os.Signal, 1)
-    signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, os.Interrupt, os.Kill)
-    <-sc
-
-    dg.Close()
+	dg.Close()
 }
