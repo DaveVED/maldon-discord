@@ -8,16 +8,17 @@ import (
 
 // MessageCreate is called whenever a new message is created in a channel.
 func MessageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
+    // Ignore messages sent by the bot itself
     if m.Author.ID == s.State.User.ID {
-        log.Println("Ignoring bot's own message.")
         return 
     }
 
-    if m.Content == "!ping" {
+    switch m.Content {
+    case "!ping":
         PingMessageCreate(s, m)
-    }
-
-    if m.Content == "!whoami" {
+    case "!whoami":
         WhoamiMessageCreate(s, m)
+    default:
+        log.Println("Command not recognized:", m.Content)
     }
 }

@@ -11,13 +11,9 @@ import (
 )
 
 func Start() {
-    // Log to indicate function start
     log.Println("Starting the bot...")
 
     token := os.Getenv("MALDON_DISCORD_BOT_TOKEN")
-
-    // Log the token fetching
-    log.Printf("Using token: %s\n", token)
 
     dg, err := discordgo.New("Bot " + token)
     if err != nil {
@@ -30,8 +26,8 @@ func Start() {
     dg.AddHandler(commands.WelcomeNewMember)
 
     dg.Identify.Intents = discordgo.IntentsGuildMessages
-
-    log.Println("Handler added.")
+    
+    log.Println("Handlers added.")
 
     if err = dg.Open(); err != nil {
         log.Fatalf("Error opening connection: %v", err)
