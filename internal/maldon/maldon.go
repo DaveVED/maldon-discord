@@ -25,7 +25,7 @@ func Start() {
 	dg.AddHandler(commands.MessageCreate)
 	dg.AddHandler(commands.WelcomeNewMember)
 
-	dg.Identify.Intents = discordgo.IntentsGuildMessages
+	dg.Identify.Intents = discordgo.IntentsGuildMessages | discordgo.IntentsGuildMembers
 
 	log.Println("Handlers added.")
 
