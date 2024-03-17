@@ -25,16 +25,16 @@
 
 The following commands are available to use:
 
-| Command | Inputs  | Description |
-| :------- | :-----   | :----------- |
-| `!ping` | `na`    | Sends `pong` to the channel that recieved the message. This is simple health check. |
-| `!whoami ` | `na` | Sends custom message to the server with user details |
+| Command     | Inputs | Description                                                                                | Examples             |
+| :---------- | :----- | :----------------------------------------------------------------------------------------- | :-------------------- |
+| `!ping`     | `na`   | Sends `pong` to the channel that received the message. This is a simple health check.     | ![Example](/assets/pingcommand.png) |
+| `!whoami`   | `na`   | Sends a custom message to the server with user details                                     | ![Example](/assets/whoamicommand.png) |
 
-We also have a few passive commands implmented:
+We also have a few passive commands implemented:
 
-| type | Description |
-| :---- | :----------- |
-| `WelcomeNewMember` | Sends a welcome message to a `welcome` channel when new members join. |
+| Type              | Description                                                       | Examples |
+| :---------------- | :---------------------------------------------------------------- | :-------- |
+| `WelcomeNewMember` | Sends a welcome message to a `welcome` channel when new members join. | ![Example](/assets/welcomecommnd.png) |
 
 ### Adding in a Command
 
