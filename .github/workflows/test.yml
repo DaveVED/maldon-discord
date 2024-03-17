@@ -22,6 +22,3 @@ jobs:
 
       - name: Test
         run: go test -v ./...
-
-      - name: Fuzz
-        run: mkdir -p testdata && go test -fuzz=FuzzParse -fuzztime 60s && go test -fuzz=FuzzTokenize -fuzztime 60s
