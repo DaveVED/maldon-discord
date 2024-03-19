@@ -23,7 +23,6 @@ func Start() {
 	log.Println("Discord session created successfully.")
 
 	dg.AddHandler(commands.MessageCreate)
-	dg.AddHandler(commands.WelcomeNewMember)
 
 	dg.Identify.Intents = discordgo.IntentsGuildMessages | discordgo.IntentsGuildMembers
 
